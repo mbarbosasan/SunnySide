@@ -1,10 +1,16 @@
-@import url('https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Barlow:wght@600&display=swap");
 
-* {
+*,
+ul {
   padding: 0;
   margin: 0;
   list-style: none;
+}
+
+a {
+  text-decoration: none;
+  color: currentColor;
 }
 
 header {
@@ -14,33 +20,30 @@ header {
   height: 100vh;
 }
 
-.logo-header {
-  padding: 20px;
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  font-family: "Barlow";
+  color: white;
 }
 
 nav {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  font-family: 'Barlow';
-  color: white;
 }
 
 ul {
   display: flex;
-  padding: 20px;
-
+  align-items: center;
+  gap: 10px;
 }
 
-nav li {
-  padding: 10px;
-  padding-left: 10px;
-}
-
-button {
+.header-button {
   display: flex;
   align-content: center;
-  font-family: 'Fraunces';
+  font-family: "Fraunces";
   background-color: white;
   border-radius: 15px;
   padding: 10px;
@@ -63,6 +66,77 @@ button {
   display: block;
 }
 
+.btn-mobile {
+  display: none;
+}
+
+/* HEADER MOBILE */
+
+@media (max-width: 600px) {
+
+  header {
+    background-image: url(/images/mobile/image-header.jpg);
+    background-size: cover;
+    height: 100vh;
+    width: 100%;
+  }
+  .header-button {
+    display: none;
+  }
+  .btn-mobile {
+    display: flex;
+    font-family: "Fraunces";
+    background-color: white;
+    border-radius: 15px;
+    padding: 10px;
+    border-width: 0;
+    cursor: pointer;
+    border: none;
+    background: none;
+    cursor: pointer;
+  }
+  .hamburger-icon {
+    border-top: 20px;
+    width: 40px;
+    border-color: black;
+  }
+    #menu {
+      display: none;
+    }
+    #nav.active #menu {
+    display: flex;
+    position: absolute;
+    left: 8%;
+    top: 13%;
+    width: 82%;
+    height: 55%;
+    z-index: 999;
+    background-color: white;
+    clip-path: polygon(93% 10%, 100% 0, 100% 100%, 0 100%, 0 10%);
+    transition: 2s;
+    color: hsl(232, 10%, 55%);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+  }
+
+  .header-text {
+    text-align: center;
+  }
+
+
+  #nav.active .header-button {
+    margin-top: 20px;
+    display: flex;
+    background-color: hsl(51, 100%, 49%);
+    text-align: center;
+    padding: 20px;
+    font-size: 15px;
+  }
+
+}
+
 .container1 {
   display: grid;
   grid-template-columns: repeat(2, 50%);
@@ -70,57 +144,78 @@ button {
 
 .container1 img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  object-fit: fill;
 }
 
-.brand-text {
+.container1 div {
   display: flex;
-  flex-direction: column;
+  align-items: center;
   justify-content: center;
-
-}
-
-.brand-text-container {
-  display: flex;
   flex-direction: column;
-  align-self: center;
-  width: 450px;
+  flex-wrap: wrap;
+  margin: 0px 50px 0px 50px;
 }
 
 .brand-text p{
-  display: flex;
-  justify-content: center;
-  font-family: 'Barlow';
-  font-size: 14px;
+  padding-top: 30px;
+  font-size: 1rem;
 }
 
-.title-brand-text {
-  font-family: 'Fraunces' !important;
-  font-size: 36px !important;
-  color: hsl(212, 27%, 19%);
-  display: flex;
-  align-self: flex-start;
+.brand-text .title-brand-text {
+  font-size: 1.8rem;
+  text-align: center;
+  font-family: 'Fraunces';
 }
 
 .brand-text-2 {
-  color: hsl(232, 10%, 55%);
-  padding-top: 30px;
-}
-
-.brand-text-3 {
-  display: flex;
-  align-self: flex-start;
-  color: hsl(212, 27%, 19%);
-  padding-top: 20px;
+  color: hsl(210, 4%, 67%);
+  font-family: 'Barlow';
+  font-size: 0.9rem;
 }
 
 .brand-text-3 a {
-  font-family: 'Fraunces';
+  font-family: "Fraunces";
   color: hsl(212, 27%, 19%);
   text-decoration: none;
 }
 
+
+/* GRID 1 MOBILE */
+
+@media (max-width: 600px) {
+  .container1 {
+    display: flex;
+    justify-content: center;
+  }
+
+  .container1 img {
+    width: 100%;
+    object-fit: cover;
+  }
+
+  .container1 div {
+    height: 100%;
+    width: auto;
+    object-fit: cover;
+  }
+
+  .title-brand-text {
+    font-size: 1.5rem;
+    font-family: 'Barlow';
+    color: hsl(212, 27%, 19%);
+    padding: 30px;
+    text-align: center;
+  }
+
+  .brand-text-2 {
+    font-size: 0.8rem;
+    text-align: center;
+  }
+  .brand-text-3 {
+    padding: 30px;
+    font-size: 0.7rem;
+  }
+}
 
 .testimonials-title {
   display: flex;
@@ -132,23 +227,28 @@ button {
   color: hsl(210, 4%, 67%);
 }
 
+section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+}
+
 .container2 {
   display: grid;
-  grid-template-columns: repeat(3, 33%);  
-  justify-items: center;
-  align-items: center;
-  height: 500px;
+  grid-template-columns: repeat(3, 33%);
+  /* justify-items: center;
+  align-items: center; */
 }
 
 .client {
   display: flex;
   flex-direction: column;
-  justify-items: center;
   align-items: center;
+  text-align: center;
 }
 
 .client p {
-  font-family: 'Barlow';
+  font-family: "Barlow";
 }
 
 .client p:nth-child(2) {
@@ -158,11 +258,11 @@ button {
 
 .client p:nth-child(3) {
   color: hsl(212, 27%, 19%);
-  font-family: 'Fraunces';
+  font-family: "Fraunces";
 }
 
 .client p:nth-child(4) {
-  padding: 5px;
+  padding: 15px;
   color: hsl(232, 10%, 55%);
 }
 
@@ -180,17 +280,34 @@ button {
   width: 25%;
 }
 
+/* GRID TESTIMONIALS MOBILE */ 
+
+@media (max-width: 600px) {
+  .container2 {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    font-size: 11px;
+  }
+  section > .testimonials-title {
+    display: flex;
+    justify-content: center;
+    font-size: 15px;
+    padding: 20px;
+    letter-spacing: 3px;
+  }
+  
+}
+
 footer {
   background-color: #90d4c5;
   color: hsl(168, 34%, 41%);
-  height: 250px;
 }
 
 .footer-logo {
   display: flex;
   justify-content: center;
   padding: 30px;
-  
 }
 
 .footer-nav {
@@ -200,7 +317,7 @@ footer {
 
 .footer-nav li {
   padding-left: 40px;
-  font-family: 'Fraunces';
+  font-family: "Fraunces";
   color: hsl(168, 34%, 41%);
 }
 
@@ -212,6 +329,7 @@ footer {
 .social-icons {
   display: flex;
   justify-content: center;
+  padding: 10px;
 }
 
 .social-icons img {
