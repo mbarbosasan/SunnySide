@@ -76,7 +76,7 @@ ul {
 @media (max-width: 720px) {
 
   header {
-    background-image: url(/images/mobile/image-header.jpg);
+    background-image: url(./images/mobile/image-header.jpg);
     background-size: cover;
     background-position: bottom center;
     height: 90vh;
