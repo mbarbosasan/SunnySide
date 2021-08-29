@@ -105,7 +105,7 @@ ul {
     #menu {
       display: none;
     }
-    #nav.active #menu {
+    #barnav.active #menu {
     display: flex;
     position: absolute;
     left: 8%;
@@ -128,7 +128,7 @@ ul {
   }
 
 
-  #nav.active .header-button {
+  #barnav.active .header-button {
     margin-top: 20px;
     display: flex;
     background-color: hsl(51, 100%, 49%);
