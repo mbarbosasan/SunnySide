@@ -38,7 +38,8 @@ nav {
 ul {
   display: flex;
   align-items: center;
-  gap: 10px;
+  font-size: 20px;
+  gap: 20px;
 }
 
 .header-button {
@@ -47,7 +48,8 @@ ul {
   font-family: "Fraunces";
   background-color: white;
   border-radius: 15px;
-  padding: 10px;
+  padding: 15px;
+  margin: 10px;
   border-width: 0;
 }
 
@@ -150,25 +152,27 @@ ul {
 
 .container1 img {
   width: 100%;
-  object-fit: fill;
 }
 
-.container1 div {
+.container1 .brand-text {
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  flex-wrap: wrap;
+  justify-content: space-around;
   margin: 0px 50px 0px 50px;
   text-align: start;
 }
 
+.egg-img {
+  grid-column: 2/3;
+  grid-row: 1;
+}
+
 .brand-text p{
-  padding-top: 50px;
-  font-size: 1.5rem;
+  font-size: 1.3rem;
 }
 
 .brand-text .title-brand-text {
-  font-size: 4rem;
+  font-size: 3rem;
   text-align: start;
   font-family: 'Fraunces';
 }
@@ -182,6 +186,44 @@ ul {
   font-family: "Fraunces";
   color: hsl(212, 27%, 19%);
   text-decoration: none;
+}
+
+.graphic-design {
+  background-image: url(./images/desktop/image-graphic-design.jpg);
+  background-size: cover;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.photography {
+  background-image: url(./images/desktop/image-photography.jpg);
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  height: 80vh;
+}
+
+.title {
+  font-family: 'Fraunces';
+  font-size: 2.5rem;
+  color: hsl(212, 27%, 19%);
+}
+
+.title-text {
+  font-family: "Barlow";
+  text-align: center;
+  justify-content: center;
+  padding-top: 5%;
+  padding-bottom: 80px;
+  font-size: 1rem;
+  color: hsl(232, 10%, 25%);
+  margin: 0% 13%;
 }
 
 
@@ -199,16 +241,18 @@ ul {
 
   .brand-text .title-brand-text {
     font-size: 3.5rem;
+    text-align: center;
   }
   .brand-text p {
     font-size: 1.3rem;
   }
-  .brand-text p:nth-child(1){
-    padding: 100px;
-  }
-
-  .brand-text p:nth-child(3){
-    padding: 100px;
+  .container1 .brand-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    margin: 0px 50px 0px 50px;
+    height: 70vw;
+    text-align: center;
   }
 }
 
@@ -227,17 +271,18 @@ ul {
     display: flex;
     align-items: center;
     text-align: center;
+    height: 80vw;
   }
 
   .container1 p {
-    font-size: 13px;
+    font-size: 1rem;
   }
 
   .brand-text .title-brand-text {
     font-family: 'Fraunces';
     color: hsl(212, 27%, 19%);
     text-align: center;
-    font-size: 3rem;
+    font-size: 2rem;
   }
 
   .brand-text-2 {
@@ -246,6 +291,29 @@ ul {
   }
   .brand-text-3 {
     padding: 30px;
+    font-size: 0.7rem;
+  }
+
+  .title {
+    margin: 0px;
+    padding: 0px;
+  }
+  .title-text {
+    margin: 20px;
+    padding: 11px;
+  }
+}
+
+@media (max-width: 300px) {
+    .container1 div{
+      display: flex;
+      gap: 10px;
+    }
+    .container1 p {
+    font-size: 0.5rem;
+  }
+  
+  .brand-text .title-brand-text {
     font-size: 0.7rem;
   }
 }
@@ -268,13 +336,14 @@ section {
 
 .container2 {
   display: grid;
+  justify-content: space-between;
   grid-template-columns: repeat(3, 33%);
-  /* justify-items: center;
-  align-items: center; */
+  height: 50vh;
 }
 
 .client {
   display: flex;
+  justify-content: space-evenly;
   flex-direction: column;
   align-items: center;
   text-align: center;
@@ -285,7 +354,6 @@ section {
 }
 
 .client p:nth-child(2) {
-  padding: 30px;
   color: hsl(232, 10%, 55%);
 }
 
@@ -295,7 +363,6 @@ section {
 }
 
 .client p:nth-child(4) {
-  padding: 15px;
   color: hsl(232, 10%, 55%);
 }
 
@@ -321,7 +388,8 @@ section {
     flex-wrap: wrap;
     justify-content: center;
     text-align: center;
-    font-size: 1rem;
+    font-size: .8rem;
+    height: 90vh;
   }
 
   section > .testimonials-title {
@@ -336,7 +404,6 @@ section {
   .client p:nth-child(2) {
     display: flex;
     justify-content: center;
-
   }
 }
 
@@ -353,21 +420,27 @@ section {
 footer {
   background-color: #90d4c5;
   color: hsl(168, 34%, 41%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  height: 25vh;
+  gap: 10px;
 }
 
 .footer-logo {
   display: flex;
+  align-content: center;
   justify-content: center;
-  padding: 30px;
 }
 
 .footer-nav {
   display: flex;
   justify-content: center;
+  gap: 20px;
 }
 
 .footer-nav li {
-  padding-left: 40px;
   font-family: "Fraunces";
   color: hsl(168, 34%, 41%);
 }
@@ -380,10 +453,15 @@ footer {
 .social-icons {
   display: flex;
   justify-content: center;
-  padding: 10px;
+  align-items: center;
+  gap: 30px;
 }
-
-.social-icons img {
-  padding-top: 30px;
-  padding-left: 20px;
+  @media (max-width: 400px) {
+    .footer-nav > ul{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
   }
