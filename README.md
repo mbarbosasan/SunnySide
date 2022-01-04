@@ -27,5 +27,5 @@ Os usuários deverão conseguir:
 
 ## Links:
 
-* [Site disponível para visualização.](https://tokenph.github.io/SunnySide/)
+* [Site disponível para visualização.](https://mbarbosasan.github.io/SunnySide/)
 * [Linkedin](https://www.linkedin.com/in/mbarbosasan/)
